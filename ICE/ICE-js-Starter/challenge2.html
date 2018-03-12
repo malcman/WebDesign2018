@@ -25,7 +25,17 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
     
     <script type="text/javascript">
 	   function setHomeAddress(){
-      // YOUR CODE HERE
+        // window.alert("Yep, my function is being called");
+        if (document.getElementById('useBilling').checked) {
+          var billingAddress = document.getElementById("billing");
+          document.getElementById('home').value = billingAddress.value;
+          document.getElementById('home').disabled = true;
+        }
+        else {
+          document.getElementById('home').value = "";
+          document.getElementById('home').disabled = false; 
+        }
+
      }
     </script>
 </head>
@@ -42,7 +52,7 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
 
         <div>
           <label for ="home">Home Address:</label><br>
-          <input type="checkbox" name="useBilling" onclick = "setHomeAddress()" id="useBilling"> Same as above
+          <input type="checkbox" name="useBilling" onchange = "setHomeAddress()" id="useBilling"> Same as above
           </label>
         <br>
         <textarea name="homeAdd" id="home"></textarea>

@@ -91,6 +91,7 @@ header{
 }
 .top-nav ul li, .menu-icon{
 	border-top: 1px solid #DDDDDA; /*CHANGE*/
+	padding: 0;
 }
 .top-nav ul li a{
 	font-size: 1em;

@@ -14,6 +14,24 @@
     <script type="text/javascript">
     function checkForm(){
     	// Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
+        var nameField = document.getElementById('fullname');
+        var addressField = document.getElementById('streetaddr');
+        var noError = true;
+        if (nameField.value.trim() == "") {
+            document.getElementById('nameerrormsg').style.display = "inline-block";
+            noError = false;
+        }
+        else {
+            document.getElementById('nameerrormsg').style.display = "none";
+        }
+        if (addressField.value.trim() == "") {
+            document.getElementById('addrerrormsg').style.display = "inline-block";
+            noError = false;
+        }
+        else {
+            document.getElementById('addrerrormsg').style.display = "none";
+        }
+        return noError;
     }  
     </script>
 </head>
@@ -24,12 +42,12 @@
         <legend>Personal details</legend>
           <label for="fullname">Full name: </label>
             <input type="text" name="fullname" id="fullname"><br/>
-            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
+            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p><br>
 
           <label for ="streetaddr"></label>
             Street Address:
             <input type="text" name="streetaddr" id="streetaddr">
-            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
+            <br><p class="errormsg" id="addrerrormsg">Please enter your street address!</p><br>
         </fieldset>
         <input type="submit" value="Submit it!"> 
     </form>

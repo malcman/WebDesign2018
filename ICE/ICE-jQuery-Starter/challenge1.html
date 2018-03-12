@@ -7,7 +7,10 @@
 
     <script>
     $(document).ready(function(){
-      /*    YOUR jQuery CODE HERE */ 
+      $('#emailfield').hide();
+      $('#subscribe').click(function(){
+        $('#emailfield').toggle();
+      });
     }); 
     </script>
   </head>
@@ -18,7 +21,7 @@
         <legend>Email subscriptions</legend>
         <div id="check">
           <label>
-            <input type="checkbox" name="subscribe" id="subscribe" onchange="toggleEmail()">
+            <input type="checkbox" name="subscribe" id="subscribe">
             Check to toggle the email field.
           </label>
         </div>
